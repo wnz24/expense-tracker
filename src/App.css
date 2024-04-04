@@ -1,38 +1,117 @@
-.App {
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-family: "Libre Baskerville", serif;
   min-height: 100vh;
+
+}
+/* Header */
+h2 {
+  width: 450px;
+  display: flex;
+  justify-content: center;
+}
+h4 {
+  width: 450px;
+  margin-bottom: 0;
+  margin-top: 50px;
+}
+
+/* Balance */
+h1 {
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+/* Income-Expense */
+
+.inc-exp {
+  height: 12vh;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: none;
+  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.income {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+ 
+ 
+}
+.expense {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+}
+.income span{
+    color: green;
+}
+.expense span{
+     color: red;
+}
+/* History */
+h3{
+    border-bottom: 1px solid;
+    padding-bottom: 4px;
+    margin-top: 45px;
+}
+.list{
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.3);
+}
+.a{
+border-right: 3px solid red;
+}
+.b{
+border-right: 3px solid green;
+}
+/* Add Transaction */
+.addTransaction{
+    display: flex;
+   flex-direction: column;
+   gap: 12px;   
+}
+.text{
+    resize: none;
+    width: 440px;
+    align-self: center;
+    border: none;
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.3);
+    padding: 5px;
+}
+.Amount{
+    resize: none;
+    width: 440px;
+    align-self: center;
+    border: none;
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.3);
+    padding: 5px;
+}
+button{
+    background-color:green;
+    padding: 12px;
+    font-size: 15px;
+    color: white;
+    border: none;
+
+}
+button:hover{
+    cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
