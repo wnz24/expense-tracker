@@ -2,93 +2,108 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
 body {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   justify-content: space-evenly;
   font-family: "Libre Baskerville", serif;
   min-height: 100vh;
-
-}
-/* Header */
-h2 {
-  width: 450px;
-  display: flex;
-  justify-content: center;
-}
-h4 {
-  width: 450px;
-  margin-bottom: 0;
-  margin-top: 50px;
+  background-color: #f4f4f9;
+  color: #333;
+  padding: 20px;
 }
 
-/* Balance */
-h1 {
+/* Headers */
+h1, h2, h3, h4 {
+  width: 450px;
+  text-align: center;
   margin: 0;
+}
+
+h4 {
+  margin-top: 50px;
+  font-size: 1.25rem;
+  color: #555;
+}
+
+h3 {
+  border-bottom: 2px solid #555;
+  padding-bottom: 4px;
+  margin-top: 45px;
+}
+
+h1 {
   letter-spacing: 1px;
+  font-size: 2rem;
+  color: #222;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #444;
 }
 
 /* Income-Expense */
-
 .inc-exp {
-  height: 12vh;
-  margin-top: 20px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border: none;
-  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.3);
-  text-transform: uppercase;
+  height: 12vh;
+  margin-top: 20px;
+  padding: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #fff;
   font-weight: bold;
+  text-transform: uppercase;
 }
-.income {
+
+.income, .expense {
   display: flex;
   flex-direction: column;
   align-items: center;
- 
- 
 }
-.expense {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
- 
+
+.income span {
+  color: #27ae60;
 }
-.income span{
-    color: green;
+
+.expense span {
+  color: #e74c3c;
 }
-.expense span{
-     color: red;
-}
+
 /* History */
-h3{
-    border-bottom: 1px solid;
-    padding-bottom: 4px;
-    margin-top: 45px;
+.list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 50px;
 }
 
-.list{
-  
-    list-style-type: none;
-    padding: 0;
-    margin-bottom: 50px;
-    
-}
-
-li{
+li {
   display: flex;
   justify-content: space-between;
-  padding: 8px;
-  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.3);
+  padding: 10px 15px;
   margin-bottom: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
   position: relative;
+  transition: background-color 0.3s ease;
 }
-.delete-btn{
+
+li:hover {
+  background-color: #f9f9f9;
+}
+
+.delete-btn {
   cursor: pointer;
   background-color: #e74c3c;
-  border: 0;
+  border: none;
   color: #fff;
   font-size: 20px;
   line-height: 20px;
@@ -99,49 +114,57 @@ li{
   transform: translate(-100%, -50%);
   opacity: 0;
   transition: opacity 0.3s ease;
-
+  border-radius: 3px;
 }
+
 li:hover .delete-btn {
   opacity: 1;
 }
 
-.a{
-border-right: 3px solid red;
+.a {
+  border-right: 3px solid #e74c3c;
 }
-.b{
-border-right: 3px solid green;
+
+.b {
+  border-right: 3px solid #27ae60;
 }
+
 /* Add Transaction */
-.addTransaction{
-    display: flex;
-   flex-direction: column;
-   gap: 12px;   
-}
-.text{
-    resize: none;
-    width: 440px;
-    align-self: center;
-    border: none;
-    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.3);
-    padding: 5px;
-}
-.Amount{
-    resize: none;
-    width: 440px;
-    align-self: center;
-    border: none;
-    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.3);
-    padding: 5px;
-}
-button{
-    background-color:green;
-    padding: 12px;
-    font-size: 15px;
-    color: white;
-    border: none;
-
-}
-button:hover{
-    cursor: pointer;
+.addTransaction {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
+.text, .Amount {
+  width: 440px;
+  align-self: center;
+  border: none;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: box-shadow 0.3s ease;
+}
+
+.text:focus, .Amount:focus {
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  outline: none;
+}
+
+button {
+  background-color: #27ae60;
+  padding: 12px;
+  font-size: 1rem;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #1e8449;
+  transform: scale(1.05);
+}
