@@ -33,7 +33,7 @@ const AddTransaction = () => {
 
         <label>Amount <br></br> (negative-expense, positive-income)</label>
         <input className="Amount" type='text' value={amount} onChange={(e) => setAmount(e.target.value)} placeholder='Enter Amount...' ></input>
-        <button type="submit" >Add Transaction</button>
+        <button className='submitbutton' type="submit" >Add Transaction</button>
       </form>
     </div>
   )
