@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {getTransactions,addTransactions,deleteTransactions} = require('../../Client/controllers/transactionCaontroller')
+const {getTransactions,addTransactions,deleteTransactions} = require('../controllers/transactionCaontroller')
 
 
 //gettransactions & deletetransaction
