@@ -18,6 +18,10 @@ app.use('/api/v1/transactions', transactions)
 const path = require('path');
 
 // Serve frontend (only in production)
+
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold));
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'Client/build')));
 
@@ -25,7 +29,3 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, 'Client', 'build', 'index.html'));
   });
 }
-
-
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold));
